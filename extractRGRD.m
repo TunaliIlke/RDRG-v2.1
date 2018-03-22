@@ -17,6 +17,31 @@ function [Feature_Values, Feature_Names] = extractRGRD(TmrMask,Im,Spacing,inter_
 % lung adenocarcinoma patients". Oncotarget, 8:96013-26.
 % doi:  https://doi.org/10.18632/oncotarget.21629
 %
+% INPUTS:
+%
+% TmrMask: Tumor Mask in binary format. 
+% Im: 3D medical image (int 16 format)
+% 
+% TmrMask and Im should be the same size.
+%
+% Spacing: Pixel spacing and slice thickness of the image. (ex: pixel 
+% spacing = 0.8685 and slice thickness = 2.5000, Spacing = [0.8685 2.500].
+% If the images are interpolated BEFORE, please put the interpolated spacing values.
+% 
+% inter_size: If interpolation is wanted to be done to the image inter_size
+% should indicate what the interpolated size of the image should be. 
+% (ex: for 1mm X 1mm x 2mm spacing inter_size = % [1 2])  
+% If interpolation is NOT needed put inter_size = -1.
+%
+% maskLung: Lung region mask in binary format. If lung mask is not 
+% available leave it blank.
+%
+%
+% OUTPUT:
+%
+% Feature_Values: 48 RD/RG features extracted.
+% Feature_Names: Names of the features extracted. 
+%
 % Please read the readme.txt file for information on the usage of function.
 % 
 % For questions: <Ilke.Tunali@moffitt.org>
