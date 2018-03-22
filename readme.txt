@@ -1,8 +1,8 @@
-[Feature_Values, Feature_Names] = extractRGRD(TmrMask,Im,Spacing,inter_size,maskLung)
-% This function gives radial gradient and radial deviation radiomic
-% features as an output. 
+% ABOUT:
+% Please find MATLAB code for extracting radial gradient and radial deviation radiomic features using medical images ( CT, MRI, etc.).
+  To apply the algorithm, use the function is "extractRGRD.m". 
 % 
-% Please reference the below article if you use the features deriven by 
+% Please reference the below article if you use the features calculated by 
 % this code.
 %
 % REFERENCE:
@@ -12,26 +12,13 @@
 % lung adenocarcinoma patients". Oncotarget, 8:96013-26.
 % doi:  https://doi.org/10.18632/oncotarget.21629
 %
-
-INPUTS: 
-
-TmrMask: Tumor segmentation mask in binary format. 
-
-Im: 3D medical image. (int 16 format) 
-
-TmrMask and Im should be same size.
-
-Spacing: Pixel spacing and slice thickness of the image. (ex: pixel spacing= 0.8685 and slice thickness = 2.5000, 
-Spacing = [0.8685 2.500]. If the images are interpolated BEFORE, please put the interpolated spacing values.
-
-inter_size: If interpolation is wanted to be done to the image inter_size should indicate what the interpolated size of the image should be. (ex: for 1mm X 1mm x 2mm spacing 
-inter_size = [1 2])  
-*If interpolation is not wanted inter_size = -1)
-
-maskLung: Lung region mask in binary format. If lung mask is not available leave it blank. 
-
-OUTPUTS:
-
-Feature_Values: 48 RD/RG features extracted
-
-Feature_Names: Names of the features extracted. 
+% 
+% For questions: <Ilke.Tunali@moffitt.org>
+%
+% HISTORY:
+%
+% Created: February 2017
+% Version 2.1 (January 2018)
+%
+% --> Copyright (C) 2018 Ilke Tunali
+% *************************************************************************
