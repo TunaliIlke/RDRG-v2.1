@@ -94,6 +94,7 @@ sz = size(maskTmr);
 
 if exist('maskLung')
     LungMask = maskLung; t = 1;
+    maskLung = maskLung(max([cent(2)-sss,1]):min([512,cent(2)+sss]),max([1, cent(1)-sss]):min([cent(1)+sss,512]),:);
 else
     LungMask = ones(sz); t = 0;
 end
