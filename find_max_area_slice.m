@@ -35,7 +35,7 @@ maxAreaSliceNum = 1;
 maxAreaSlice = 0;
 for i = 1:size(I,3)
     
-    L = logical(I(:,:,i),8);
+    L = logical(I(:,:,i));
     r = regionprops(L,'Area');
     area = [r.Area];
     
