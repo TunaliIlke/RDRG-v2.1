@@ -112,7 +112,7 @@ maskTmr = edit_slices2(maskTmr ,slices);
 
 if inter_size ~= -1
     ratio = inter_size(1)/(pxSpac(1));
-    ratio2 = inter_size(2)/Spacing(2);
+    ratio2 = inter_size(2)/Spacing(3);
     VOI = interp3dim(VOI, round(size(VOI,1)/ratio),round(size(VOI,2)/ratio),round(size(VOI,3)/ratio2));
     maskBorder = interp3dim(maskBorder, round(size(maskBorder,1)/ratio),round(size(maskBorder,2)/ratio),round(size(maskBorder,3)/ratio2))>0.20; 
     maskErode = interp3dim(maskErode, round(size(maskErode,1)/ratio),round(size(maskErode,2)/ratio),round(size(maskErode,3)/ratio2))>0.20; 
