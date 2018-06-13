@@ -64,6 +64,9 @@ r1 = regionprops(L,'BoundingBox');
 roundR1 = round(r1(1).BoundingBox);
 range = [max([roundR1(3)-1 1]), min([roundR1(3)+roundR1(6), size(L,3)])];
 maskTmr = maskTmrAll(:,:,range(1):range(2));
+if exist('maskLung')
+    maskLung = maskLung(:,:,range(1):range(2));
+end
 Im = Im(:,:,range(1):range(2));
 
 r = regionprops(maskTmr,'centroid');
